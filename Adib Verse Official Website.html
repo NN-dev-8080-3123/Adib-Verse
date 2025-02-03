@@ -140,10 +140,18 @@
         <a href="file:///C:/adib-verse-website/lang=id/"><button class="custom-button">Change Lang...</button></a>
         
         <script>function hiAdib() {
-    let name = prompt("Hi to Adib!\nInsert Your Name to be Include To the Chat:");
-    alert("Your Name is: " + name);
-    let user_name = document.getElementsByClassName("user_name");
-    user_name.innerHTML = "<h1>" + "Your Name: " + name + "</h1>";
+    let name = prompt("Hi to Adib!\nInsert Your Name to be Included in the Chat:");
+    
+    if (name) { // Pastikan pengguna mengisi nama sebelum menampilkan
+        alert("Your Name is: " + name);
+
+        // Perbaikan dalam mendapatkan elemen dan mengubah isinya
+        let user_name = document.querySelector(".user_name h1");
+        if (user_name) {
+            user_name.innerHTML = "Your Name: " + name;
+        }
+    }
+}
 }</script>
         
     
