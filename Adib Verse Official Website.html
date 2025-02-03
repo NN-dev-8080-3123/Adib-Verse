@@ -129,31 +129,34 @@
         
         <br><br>
         
-        <p>&nbsp; Click the Button in the Bottom Left Corner to Include your Name (Optional) :</p>
-        
-        <button class="custom-button" onclick="hiAdib()">Include Name</button>
-        
-        <br><br>
-        
-        <p>&nbsp; This Website is also Support 2 different Languages: English (US) and also Indonesian</p>
-        
-        <a href="file:///C:/adib-verse-website/lang=id/"><button class="custom-button">Change Lang...</button></a>
-        
-        <script>function hiAdib() {
-    let name = prompt("Hi to Adib!\nInsert Your Name to be Included in the Chat:");
-    
-    if (name) { // Pastikan pengguna mengisi nama sebelum menampilkan
-        alert("Your Name is: " + name);
+<p>&nbsp; Click the Button in the Bottom Left Corner to Include your Name (Optional) :</p>
 
-        // Perbaikan dalam mendapatkan elemen dan mengubah isinya
-        let user_name = document.querySelector(".user_name h1");
-        if (user_name) {
-            user_name.innerHTML = "Your Name: " + name;
+<button class="custom-button" onclick="hiAdib()">Include Name</button>
+
+<br><br>
+
+<p>&nbsp; This Website also Supports 2 Different Languages: English (US) and Indonesian</p>
+
+<a href="file:///C:/adib-verse-website/lang=id/">
+    <button class="custom-button">Change Lang...</button>
+</a>
+
+<script>
+    function hiAdib() {
+        let name = prompt("Hi to Adib!\nInsert Your Name to be Included in the Chat:");
+
+        if (name && name.trim() !== "") { // Cek apakah nama tidak kosong setelah di-trim
+            name = name.trim(); // Hapus spasi di awal dan akhir
+
+            alert("Your Name is: " + name);
+
+            // Dapatkan elemen yang benar dan ubah isinya
+            let user_name = document.querySelector(".user_name h1");
+            if (user_name) {
+                user_name.textContent = "Your Name: " + name; // Gunakan textContent agar lebih aman
+            }
         }
     }
-}
-}</script>
-        
-    
+</script>
 
 </h3></body></html>
